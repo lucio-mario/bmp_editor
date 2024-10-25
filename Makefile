@@ -35,12 +35,15 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(SRC_DIR)/common.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Phonies
-.PHONY: all clean print
+.PHONY: all clean run print
 
 all: $(TARGET)
 
 clean:
 	@$(RM) -r $(BUILD_DIR)
+
+run:
+	./$(TARGET)
 
 print:
 	@echo sources: $(SOURCES)
